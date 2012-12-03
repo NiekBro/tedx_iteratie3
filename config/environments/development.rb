@@ -34,4 +34,12 @@ TedxIteratie3::Application.configure do
 
   # Expands the lines which load the assets
   config.assets.debug = true
+
+  config.action_mailer.delivery_method = :smtp
+  config.action_mailer.smtp_settings = {
+    :address              => "send.one.com",
+    :port                 => 2525,
+    :user_name            => 'tedx@qhoekman.nl',
+    :password             => 'dmec2012',
+    :authentication       => 'plain' }
 end

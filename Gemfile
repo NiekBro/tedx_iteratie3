@@ -18,3 +18,4 @@ end
 
 gem 'jquery-rails'
 gem 'debugger'
+gem 'mailman', :require => false

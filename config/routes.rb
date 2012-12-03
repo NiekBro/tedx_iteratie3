@@ -1,4 +1,7 @@
 TedxIteratie3::Application.routes.draw do
+
+
+  resources :hookups, :only => [:index, :show] 
   # The priority is based upon order of creation:
   # first created -> highest priority.
 
