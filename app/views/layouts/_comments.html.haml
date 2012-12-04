@@ -1,0 +1,7 @@
+%h3 Comments
+- record.comments.each do |comment|
+  %p
+    %span= comment.title
+    %span
+      door... #{comment.user.name}
+    %span= comment.comment

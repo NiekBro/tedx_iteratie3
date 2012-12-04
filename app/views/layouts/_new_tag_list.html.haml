@@ -1,0 +1,5 @@
+%h3 New Tags
+= form_tag blogpost_tag_list_path(record.id), :method => 'post' do
+  = label_tag(:tag_list)
+  = text_field_tag(:tag_list)
+  = submit_tag("Add")

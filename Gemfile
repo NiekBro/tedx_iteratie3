@@ -15,7 +15,12 @@ group :assets do
   	gem 'haml-rails'
   	gem 'uglifier', '>= 1.0.3'
 end
-
+gem 'bootstrap-sass'
 gem 'jquery-rails'
 gem 'debugger'
-gem 'mailman', :require => false
+
+# ActiveRecord extensions
+gem 'acts_as_commentable', '3.0.1'
+gem 'acts-as-taggable-on', '~> 2.3.1'
+gem "acts_as_follower", "~> 0.1.1"
+gem 'activerecord-reputation-system', require: 'reputation_system'

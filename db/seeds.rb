@@ -5,24 +5,22 @@
 #
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
-hookups = Hookup.create!([
+User.create!([
 	{
-		:name => "DiaBETER",
-		:description => "Patientvereniging waarin je gehoord wordt!"
-	}
-])
-diseases = Disease.create!([
-	{
-		:hookup_id => Hookup.first.id,
-		:name => "Diabetes"
-	}
-])
-
-users = User.create!([
-	{
-		:name => 'Quido Hoekman',
+		:name => "Quido Hoekman",
 		:email => "quido@qhoekman.nl",
-		:avatar => "http://www.avatarhosting.net/pics/2719/ben_elton.jpg",
-		:hookup_id => Hookup.first.id
+		:avatar => "https://fbcdn-profile-a.akamaihd.net/hprofile-ak-ash4/c170.50.621.621/s160x160/487062_474066185960675_1760798499_n.jpg"
+	},
+	{
+		:name => "Robin van Norel",
+		:email => "robinhood953@hotmail.com",
+		:avatar => "https://fbcdn-sphotos-f-a.akamaihd.net/hphotos-ak-snc6/266187_4274198618308_395103412_o.jpg"
+	}
+])
+Blogpost.create!([
+	{
+		:title => "Hello World",
+		:body => "Dit is een test!",
+		:user_id => User.first.id
 	}
 ])

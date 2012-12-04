@@ -1,0 +1,8 @@
+- @blogposts.each do |blogpost|
+  %div
+    %h1
+      \##{blogpost.id} - #{blogpost.title}
+    %p
+      = blogpost.body
+    = render :partial => "post_meta", :locals => {:record => blogpost}
+  %hr

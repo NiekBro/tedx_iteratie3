@@ -1,0 +1,6 @@
+- unless current_user.id == record.user.id 
+  .btn-primary
+    - if current_user.following?(record.user)
+      = link_to "Unfollow", unfollow_user_path(record.user.id)
+    - else
+      = link_to "Follow", follow_user_path(record.user.id)

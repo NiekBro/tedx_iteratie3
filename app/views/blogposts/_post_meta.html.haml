@@ -1,0 +1,13 @@
+%span
+  Author: #{link_to record.user.name, user_path(record.user.id)}
+- if logged_in
+  = render :partial => "layouts/rate", :locals => {:record => record}
+  = render :partial => "layouts/following", :locals => {:record => record}
+- unless record.tags.empty?
+  = render :partial => "layouts/tag_list", :locals => {:record => record}
+- if logged_in
+  = render :partial => "layouts/new_tag_list", :locals => {:record => record}
+- unless record.comments.empty?
+  = render :partial => 'layouts/comments', :locals => {:record => record}
+- if logged_in
+  = render :partial => 'layouts/new_comment', :locals => {:record => record}

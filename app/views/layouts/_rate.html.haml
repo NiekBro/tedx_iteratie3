@@ -1,0 +1,4 @@
+%h3 Rate
+- if current_user && !current_user.voted_for?(record)
+  | #{link_to "up", rate_blogpost_path(record, type: "up"), method: "post"}
+  | #{link_to "down", rate_blogpost_path(record, type: "down"), method: "post"}
