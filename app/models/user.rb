@@ -9,4 +9,15 @@ class User < ActiveRecord::Base
 	def voted_for?(blogpost)
 	  evaluations.where(target_type: blogpost.class, target_id: blogpost.id).present?
 	end
+
+	def self.from_omniauth auth
+	  where(auth.slice(:provider, :uid)).first_or_initialize.tap do |user|
+	    user.provider = auth.provider
+	    user.uid = auth.uid
+	    user.name = auth.info.name
+	    user.email = auth.info.email
+	    user.avatar = auth.info.image
+	    user.save!
+	  end
+	end
 end

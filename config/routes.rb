@@ -1,4 +1,7 @@
 TedxIteratie3::Application.routes.draw do
+  match 'auth/:provider/callback', to: 'sessions#create'
+  match 'auth/failure', to: redirect('/')
+  match 'signout', to: 'sessions#destroy', as: 'signout'
 
   resources :users, :only => [:show] do
     member { get :follow}

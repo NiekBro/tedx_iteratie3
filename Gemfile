@@ -18,7 +18,9 @@ end
 gem 'bootstrap-sass'
 gem 'jquery-rails'
 gem 'debugger'
-
+gem 'omniauth-facebook', '1.4.0'
+gem 'omniauth-twitter'
+gem 'omniauth-linkedin'
 # ActiveRecord extensions
 gem 'acts_as_commentable', '3.0.1'
 gem 'acts-as-taggable-on', '~> 2.3.1'
