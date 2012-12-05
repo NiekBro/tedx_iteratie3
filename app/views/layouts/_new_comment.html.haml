@@ -1,7 +1,4 @@
-%h3 New comment
-= form_tag blogpost_comment_path(record.id), :method => 'post' do
-  = label_tag(:title)
-  = text_field_tag(:title)
-  = label_tag(:comment)
-  = text_field_tag(:comment)
-  = submit_tag("Add")
+%h3 Nieuwe reactie
+= form_tag path, :method => 'post' do
+  = text_area_tag(:comment)
+  = submit_tag("Add",:class => "btn btn-primary")

@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  youtube_id: 
+  title: 
+  description: 
+  thumbnail_url: 
+
+two:
+  youtube_id: 
+  title: 
+  description: 
+  thumbnail_url: 

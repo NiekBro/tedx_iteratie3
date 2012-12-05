@@ -5,7 +5,7 @@ class User < ActiveRecord::Base
 	acts_as_followable
 	acts_as_follower
 	has_reputation :votes, source: {reputation: :votes, of: :blogposts}, aggregated_by: :sum
-
+	has_and_belongs_to_many :circles
 	def voted_for?(blogpost)
 	  evaluations.where(target_type: blogpost.class, target_id: blogpost.id).present?
 	end

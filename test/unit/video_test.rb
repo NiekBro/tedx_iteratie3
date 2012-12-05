@@ -1,6 +1,6 @@
 require 'test_helper'
 
-class EmailerTest < ActionMailer::TestCase
+class VideoTest < ActiveSupport::TestCase
   # test "the truth" do
   #   assert true
   # end

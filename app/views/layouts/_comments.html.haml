@@ -1,7 +1,7 @@
 %h3 Comments
 - record.comments.each do |comment|
-  %p
-    %span= comment.title
-    %span
-      door... #{comment.user.name}
-    %span= comment.comment
+  .row
+    .span1.pull-left
+      %img{:src => comment.user.avatar, :width => "64", :height => "64"}
+    .span8.well
+      = comment.comment

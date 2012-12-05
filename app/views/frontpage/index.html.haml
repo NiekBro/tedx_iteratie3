@@ -1,0 +1,27 @@
+.well
+  .btn.btn-primary.btn-large
+    %span <
+  - @videos.each_with_index do |video,i|
+    - break if i == 4
+    %a{:href => circle_path(video.unique_id)}
+      %img{:src => video.thumbnails.first.url, :class => "img-poleroid", :width => 190, :height => 120}
+  .btn.btn-primary.btn-large
+    %span > 
+.row
+  .span8
+    %h1 Jouw discussies
+    - @circles.each do |circle|
+      %h3= Video.find_by_youtube_id(circle.unique_id).title
+      - circle.comments.each do |comment|
+        .row
+          .span1.pull-left
+            %img{:src => comment.user.avatar, :width => "64", :height => "64"}
+          .span6.well
+            = comment.comment
+  .span4
+    %h2 Ideeen
+.row
+  .span9
+    %h2 Mensen die je misschient kent?
+    %img{:src => User.find(1).avatar, :width => "64", :height => "64"}
+

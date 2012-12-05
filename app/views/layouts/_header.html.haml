@@ -1,0 +1,16 @@
+.row
+  .navbar
+    .navbar-inner
+      %a.brand{:href => "#"} TEDxNijmegen
+      %ul.nav
+        %li.active
+          %a{:href => root_path} Voorpagina
+        %li
+          %a{:href => "#"} Ideas
+        %li
+          %a{:href => "#"} Videos
+      .span2.pull-right
+        - if logged_in
+          = render :partial => "sessions/logout"
+        - else
+          = render :partial => "sessions/login"

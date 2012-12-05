@@ -1,0 +1,35 @@
+.row
+  .span7.video
+    %iframe{:allowfullscreen => "", :frameborder => "0", :height => "345", :src => "http://www.youtube.com/embed/"+@circle.unique_id, :width => "540"}
+
+    %span 
+      = @circle.video.title
+      .btn.btn-primary
+        %i{:class => "icon-thumbs-up"}
+        %span 
+          - if current_user && !current_user.voted_for?(@circle)
+            = link_to "steun", rate_circle_path(@circle, type: "up"), method: "post", class: "btn btn-success"
+      .btn.btn-primary
+        %span
+          Volg
+    %pre
+      = @circle.video.description
+  .span5.believers
+    %h3 Deze mensen steunen dit:
+    - @circle.evaluators_for(:votes).each do |user|
+      .row
+        .span1.pull-left
+          %img{:src => user.avatar, :width => "64", :height => "64"}
+        .span8
+          = user.name
+.row
+  .span9.comments
+  - if logged_in
+    = render :partial => 'layouts/new_comment', :locals => {:record => @circle, :path => comment_circle_path(@circle.id)}
+  - unless @circle.comments.empty?
+    = render :partial => 'layouts/comments', :locals => {:record => @circle}
+  - else
+    .well 
+      %span
+        Er zijn nog geen reacties geplaatst!
+

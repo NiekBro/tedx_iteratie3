@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20121125200511) do
+ActiveRecord::Schema.define(:version => 20121205143352) do
 
   create_table "blogposts", :force => true do |t|
     t.string   "title"
@@ -19,6 +19,18 @@ ActiveRecord::Schema.define(:version => 20121125200511) do
     t.integer  "user_id"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
+  end
+
+  create_table "circles", :force => true do |t|
+    t.string   "unique_id"
+    t.string   "circle_type"
+    t.datetime "created_at",  :null => false
+    t.datetime "updated_at",  :null => false
+  end
+
+  create_table "circles_users", :id => false, :force => true do |t|
+    t.integer "user_id"
+    t.integer "circle_id"
   end
 
   create_table "comments", :force => true do |t|
@@ -117,6 +129,15 @@ ActiveRecord::Schema.define(:version => 20121125200511) do
     t.string   "avatar"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
+  end
+
+  create_table "videos", :force => true do |t|
+    t.string   "youtube_id"
+    t.string   "title"
+    t.string   "description"
+    t.string   "thumbnail_url"
+    t.datetime "created_at",    :null => false
+    t.datetime "updated_at",    :null => false
   end
 
 end
